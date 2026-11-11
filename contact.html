@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <<title>Contact Us - Independence Junior College</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-content">
+      <img src="images/ijc-logo.png.png" alt="Independence Junior College Logo" class="header-logo">
+      <div>
+        <h1>Independence Junior College</h1>
+        <p class="site-tagline">Student Academic Portal &amp; Portfolio</p>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <a href="index.html" class="nav-btn">Home</a>
+    <a href="gallery.html" class="nav-btn">Gallery</a>
+    <a href="profiles.html" class="nav-btn">User Profiles</a>
+    <a href="biography.html" class="nav-btn">Hero Biography</a>
+    <a href="contact.html" class="nav-btn">Enroll &amp; Contact Us</a>
+  </nav>
+
+  <div class="container">
+    <aside>
+      <h3>Quick Actions</h3>
+      <ul>
+        <li><a href="#" onclick="switchForm('enrollment')">Student Enrollment</a></li>
+        <li><a href="#" onclick="switchForm('contact')">General Inquiries</a></li>
+        <li><a href="profiles.html">View Profiles</a></li>
+      </ul>
+    </aside>
+
+    <main>
+      <!-- Form Selection Buttons -->
+      <div class="tab-container">
+        <button type="button" class="tab-btn active-tab" id="tabEnroll" onclick="switchForm('enrollment')">Enrollment Application</button>
+        <button type="button" class="tab-btn" id="tabContact" onclick="switchForm('contact')">General Contact</button>
+      </div>
+
+      <!-- SECTION 1: ENROLLMENT FORM -->
+      <div id="enrollmentSection" class="section-card">
+        <h2>IJC Student Enrollment Application</h2>
+        <p>Complete the form below to register as a new student for the upcoming semester.</p>
+
+        <form class="contact-form" id="enrollmentForm">
+          <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" placeholder="Enter first name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Enter last name" required>
+          </div>
+
+          <!-- NEW: Gender Radio Buttons -->
+          <div class="form-group">
+            <label>Gender:</label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="gender" value="Male" required> Male
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="gender" value="Female" required> Female
+              </label>
+            </div>
+          </div>
+
+          <!-- NEW: Age Dropdown -->
+          <div class="form-group">
+            <label for="age">Age:</label>
+            <select id="age" name="age" required>
+              <option value="">-- Select Your Age --</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26-30">26 – 30</option>
+              <option value="31-40">31 – 40</option>
+              <option value="41-50">41 – 50</option>
+              <option value="50+">50+</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="enrollEmail">Email Address:</label>
+            <input type="email" id="enrollEmail" name="enrollEmail" placeholder="example@email.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="(501) 000-0000" required>
+          </div>
+
+          <!-- EXPANDED: Academic Programs & Subjects Dropdown -->
+          <div class="form-group">
+            <label for="program">Select Academic Program / Major:</label>
+            <select id="program" name="program" required>
+              <option value="">-- Choose a Degree Program --</option>
+              <optgroup label="Information Technology &amp; Computing">
+                <option value="AINT">Applied Information Technology (AINT)</option>
+                <option value="IT">Information Technology (IT)</option>
+                <option value="CS">Computer Science &amp; Software Engineering</option>
+                <option value="CYBER">Cybersecurity &amp; Network Administration</option>
+                <option value="WEB">Web Development &amp; Digital Media Design</option>
+              </optgroup>
+              <optgroup label="Business &amp; Management">
+                <option value="BA">Business Administration (BA)</option>
+                <option value="ACCT">Accounting &amp; Financial Management</option>
+                <option value="MGT">Applied Management &amp; Entrepreneurship</option>
+                <option value="MKTG">Digital Marketing &amp; E-Commerce</option>
+              </optgroup>
+              <optgroup label="Arts, Science &amp; General Studies">
+                <option value="ENG">English Literature &amp; Communication</option>
+                <option value="MTH">Applied Mathematics &amp; Statistics</option>
+                <option value="ENV">Environmental Science &amp; Agriculture</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="transcript">Upload High School Transcript / ID:</label>
+            <input type="file" id="transcript" name="transcript" accept="image/*,.pdf">
+          </div>
+
+          <button type="submit" class="submit-btn">Submit Application</button>
+        </form>
+
+        <div id="enrollSuccess" class="ad-box" style="display:none; margin-top:15px;">
+          <h4>Application Received!</h4>
+          <p>Thank you for registering at IJC. Your reference code is: <strong>IJCA2026-REG</strong></p>
+        </div>
+      </div>
+
+      <!-- SECTION 2: CONTACT US FORM -->
+      <div id="contactSection" class="section-card" style="display: none;">
+        <h2>Contact Us</h2>
+        <p>Have questions about courses, admissions, or fees? Send us a direct message.</p>
+
+        <form class="contact-form" id="contactUsForm">
+          <div class="form-group">
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" placeholder="Enter topic/subject" required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" placeholder="Write your message here..." required></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+
+        <div id="contactSuccess" class="ad-box" style="display:none; margin-top:15px;">
+          <h4>Message Sent!</h4>
+          <p>We have received your message and will respond shortly.</p>
+        </div>
+      </div>
+    </main>
+
+    <section>
+      <h3>Extra Info &amp; Ads</h3>
+      <div class="ad-box">
+        <h4>IJC Announcements</h4>
+        <p>Registration for upcoming semester courses opens soon. Check your portal regularly for updates.</p>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Independence Junior College | Devon Baizer Web Development Coursework</p>
+  </footer>
+
+  <script>
+    // Tab switching logic
+    function switchForm(formType) {
+      const enrollSec = document.getElementById('enrollmentSection');
+      const contactSec = document.getElementById('contactSection');
+      const tabEnroll = document.getElementById('tabEnroll');
+      const tabContact = document.getElementById('tabContact');
+
+      if (formType === 'enrollment') {
+        enrollSec.style.display = 'block';
+        contactSec.style.display = 'none';
+        tabEnroll.classList.add('active-tab');
+        tabContact.classList.remove('active-tab');
+      } else {
+        enrollSec.style.display = 'none';
+        contactSec.style.display = 'block';
+        tabContact.classList.add('active-tab');
+        tabEnroll.classList.remove('active-tab');
+      }
+    }
+
+    // Submit handlers for interactive feedback
+    document.getElementById('enrollmentForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      this.style.display = 'none';
+      document.getElementById('enrollSuccess').style.display = 'block';
+    });
+
+    document.getElementById('contactUsForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      this.style.display = 'none';
+      document.getElementById('contactSuccess').style.display = 'block';
+    });
+  </script>
+
+</body>
+</html>
